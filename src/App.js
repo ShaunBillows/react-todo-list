@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useRef } from 'react'
-import TodoList from './componants/TodoList'
+import TodoList from './components/TodoList'
+import TodoForm from './components/TodoForm'
 
 function App() {
 
@@ -42,9 +43,7 @@ function App() {
         </div>
 
         <div className='container-item'>
-          <input ref={todoNameRef} type="text" />
-          <button onClick={handleAddTodo}>Add</button> 
-          <button onClick={handleClearTodos}>Clear</button>
+          <TodoForm todoNameRef={todoNameRef} handleAddTodo={handleAddTodo} handleClearTodos={handleClearTodos}/>
         </div>
 
         <div className='container-item todo-list'>
