@@ -35,14 +35,24 @@ function App() {
 
   return (
 
-    <>
-        <TodoList todos={todos} toggleTodo={toggleTodo} />
-        <input ref={todoNameRef} type="text" />
-        <button onClick={handleAddTodo}>add todo</button> 
-        <button onClick={handleClearTodos}>clear completed todos</button>
-        <div> {getTodosLeft()} left to do</div>
-    </>
-    
+    <div className='container'>
+
+        <div className='container-item'>
+          {getTodosLeft()} left to do
+        </div>
+
+        <div className='container-item'>
+          <input ref={todoNameRef} type="text" />
+          <button onClick={handleAddTodo}>Add</button> 
+          <button onClick={handleClearTodos}>Clear</button>
+        </div>
+
+        <div className='container-item todo-list'>
+          <TodoList todos={todos} toggleTodo={toggleTodo} />
+        </div>
+
+    </div>
+
   )
 }
 
